@@ -36,4 +36,77 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('fade-up');
         observer.observe(el);
     });
+
+    // --- Scroll-based Frame Animation ---
+    const canvas = document.getElementById('scroll-animation');
+    if (canvas) {
+        const context = canvas.getContext('2d');
+        const frameCount = 192;
+        
+        // Set fixed canvas size based on frame dimensions (1280x720)
+        // CSS object-fit: cover will handle scaling it to the screen
+        canvas.width = 1280;
+        canvas.height = 720;
+
+        const currentFrame = index => (
+            `frames/frame_${(index + 1).toString().padStart(4, '0')}.jpg`
+        );
+
+        const images = [];
+        let framesLoaded = 0;
+
+        // Preload frames
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            img.onload = () => {
+                framesLoaded++;
+                // Draw the first frame once loaded to avoid a blank background
+                if (i === 0) {
+                    context.drawImage(img, 0, 0);
+                }
+            };
+            images.push(img);
+        }
+
+        // Scroll Logic
+        let scrollFraction = 0;
+        let frameIndex = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+            
+            // Calculate progress (from 0 to 1)
+            scrollFraction = scrollTop / maxScrollTop;
+            
+            // If the document isn't scrollable yet, avoid NaN
+            if (isNaN(scrollFraction)) scrollFraction = 0;
+
+            // Map progress to frame index
+            frameIndex = Math.min(
+                frameCount - 1,
+                Math.floor(scrollFraction * frameCount)
+            );
+        });
+
+        // Animation Loop using requestAnimationFrame
+        // We track the last drawn frame so we don't redraw unnecessarily
+        let lastDrawnFrameIndex = -1;
+        
+        const updateImage = () => {
+            if (framesLoaded > frameIndex && frameIndex !== lastDrawnFrameIndex) {
+                // If the requested frame is loaded and different from the last drawn
+                const img = images[frameIndex];
+                if (img.complete) { // Extra check to ensure it's ready
+                    context.drawImage(img, 0, 0);
+                    lastDrawnFrameIndex = frameIndex;
+                }
+            }
+            requestAnimationFrame(updateImage);
+        };
+
+        // Start drawing loop
+        requestAnimationFrame(updateImage);
+    }
 });
