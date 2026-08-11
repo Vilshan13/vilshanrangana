@@ -2,13 +2,13 @@
 
 :root {
     --bg-color: transparent;
-    --card-bg: rgba(22, 10, 35, 0.7); 
-    --card-bg-hover: rgba(30, 15, 50, 0.9);
+    --card-bg: rgb(22 10 35 / 70%); 
+    --card-bg-hover: rgb(30 15 50 / 90%);
     --primary: #8a2be2;
     --primary-hover: #9d4edd;
-    --text-main: #ffffff;
+    --text-main: #fff;
     --text-secondary: #a098b0;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgb(255 255 255 / 10%);
 }
 
 * {
@@ -19,7 +19,7 @@
 
 body, html {
     background-color: #05020a;
-    font-family: 'Outfit', sans-serif;
+    font-family: Outfit, sans-serif;
     color: var(--text-main);
     scroll-behavior: smooth;
 }
@@ -134,13 +134,14 @@ section {
     text-align: center;
     color: var(--text-secondary);
     max-width: 600px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 50px;
     line-height: 1.6;
 }
 
 .gradient-text {
     background: linear-gradient(90deg, #d383ff, #8a2be2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -329,15 +330,15 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    background: rgba(255,255,255,0.05);
+    background: rgb(255 255 255 / 5%);
 }
 
 .placeholder-img.purple-hue {
-    background: linear-gradient(45deg, rgba(138,43,226,0.2), rgba(0,0,0,0.5));
+    background: linear-gradient(45deg, rgb(138 43 226 / 20%), rgb(0 0 0 / 50%));
 }
 
 .placeholder-img.dark-hue {
-    background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(0,0,0,0.8));
+    background: linear-gradient(45deg, rgb(255 255 255 / 5%), rgb(0 0 0 / 80%));
 }
 
 /* Resume */
@@ -450,7 +451,7 @@ form {
 input, select, textarea {
     width: 100%;
     padding: 15px 20px;
-    background: rgba(0,0,0,0.3);
+    background: rgb(0 0 0 / 30%);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     color: white;
@@ -458,14 +459,14 @@ input, select, textarea {
     font-size: 1rem;
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-}
-
 textarea {
     min-height: 150px;
     resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
 }
 
 .contact-info {
@@ -484,7 +485,7 @@ textarea {
 .info-item .icon {
     width: 50px;
     height: 50px;
-    background: rgba(138,43,226,0.1);
+    background: rgb(138 43 226 / 10%);
     color: var(--primary);
     border-radius: 50%;
     display: flex;
@@ -535,30 +536,36 @@ textarea {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (width <= 900px) {
     .header, .stats-row, .resume, .contact-container, .footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 30px;
     }
+
     .hero {
         text-align: center;
     }
+
     .hero-actions {
         justify-content: center;
     }
+
     .resume, .works-grid {
         grid-template-columns: 1fr;
     }
+
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
     .service-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
+
     .service-header, .service-item p {
         width: 100%;
     }
