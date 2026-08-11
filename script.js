@@ -61,10 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = currentFrame(i);
             img.onload = () => {
                 framesLoaded++;
-                // Draw the first frame once loaded to avoid a blank background
-                if (i === 0) {
+                // Draw the initial frame once it's loaded if we're at the top
+                if (i === frameIndex && lastDrawnFrameIndex !== frameIndex) {
                     context.drawImage(img, 0, 0);
+                    lastDrawnFrameIndex = frameIndex;
                 }
+            };
+            img.onerror = () => {
+                console.error(`Failed to load frame: ${img.src}`);
             };
             images.push(img);
         }
@@ -73,14 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollFraction = 0;
         let frameIndex = 0;
 
-        window.addEventListener('scroll', () => {
+        const updateScroll = () => {
             const scrollTop = document.documentElement.scrollTop;
-            const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+            const maxScrollTop = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
             
             // Calculate progress (from 0 to 1)
             scrollFraction = scrollTop / maxScrollTop;
             
-            // If the document isn't scrollable yet, avoid NaN
             if (isNaN(scrollFraction)) scrollFraction = 0;
 
             // Map progress to frame index
@@ -88,17 +91,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 frameCount - 1,
                 Math.floor(scrollFraction * frameCount)
             );
-        });
+        };
+
+        window.addEventListener('scroll', updateScroll);
+        window.addEventListener('resize', updateScroll);
+        updateScroll(); // Initialize on load
 
         // Animation Loop using requestAnimationFrame
         // We track the last drawn frame so we don't redraw unnecessarily
         let lastDrawnFrameIndex = -1;
         
         const updateImage = () => {
-            if (framesLoaded > frameIndex && frameIndex !== lastDrawnFrameIndex) {
-                // If the requested frame is loaded and different from the last drawn
+            if (frameIndex !== lastDrawnFrameIndex) {
                 const img = images[frameIndex];
-                if (img.complete) { // Extra check to ensure it's ready
+                if (img && img.complete && img.naturalWidth > 0) { 
                     context.drawImage(img, 0, 0);
                     lastDrawnFrameIndex = frameIndex;
                 }

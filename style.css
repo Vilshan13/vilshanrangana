@@ -26,20 +26,6 @@ body, html {
     line-height: 1.6;
 }
 
-/* Background overlay to ensure text readability over the animation */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    opacity: 0.6;
-    z-index: -1;
-    pointer-events: none;
-}
-
 /* Scroll Animation Canvas */
 #scroll-animation {
     position: fixed;
@@ -47,9 +33,11 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -2;
+    z-index: 0;
     object-fit: cover;
     pointer-events: none;
+    /* Apply lower brightness and blur directly to the canvas */
+    filter: brightness(0.4) blur(8px);
 }
 
 h1, h2, h3, h4, h5, h6, .logo-mark, .num, .section-title, .col-title, .gradient-text {
