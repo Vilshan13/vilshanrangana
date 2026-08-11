@@ -188,10 +188,11 @@ section {
 }
 
 .social-links a {
-    width: 40px;
+    width: auto;
+    padding: 0 15px;
     height: 40px;
     border: 1px solid var(--primary);
-    border-radius: 50%;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,7 +209,8 @@ section {
 /* Stats */
 .stats-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 80px;
     padding: 40px 0;
     border-bottom: 1px solid var(--border-color);
 }
