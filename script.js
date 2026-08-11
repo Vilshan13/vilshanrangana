@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select elements to animate
     const animateElements = document.querySelectorAll(
-        '.section-header, .service-card, .project-card, .process-step, .timeline-item, .skill-category, .learning-card, .contact-content'
+        '.hero-content, .hero-image, .section-header, .service-card, .project-card, .process-step, .timeline-item, .skill-category, .learning-card, .contact-content'
     );
 
     animateElements.forEach(el => {
