@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vilshan - UX Designer | Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -16,137 +20,178 @@
 
         <header class="header">
             <div class="logo">
-                <div class="logo-mark">V</div>
-                <span class="email">vilshanrangana18@gmail.com</span>
+                <a href="#" class="logo-mark">V</a>
             </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="nav">
-                <a href="#about">About me</a>
+                <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#works">Works</a>
-                <a href="#resume">Resume</a>
+                <a href="#works">Projects</a>
                 <a href="#skills">Skills</a>
-                <a href="#testimonials">Testimonials</a>
+                <a href="#resume">Education</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a href="#hire" class="btn btn-primary">Let's Talk →</a>
+            <a href="#contact" class="btn btn-primary nav-cta">Let's Talk →</a>
         </header>
 
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-content">
-                <p class="greeting">I am Vilshan</p>
-                <h1 class="main-title"><span class="gradient-text">UX Designer | Web Developer </span><br>Designing
-                    Digital Experiences That Make an Impact.</h1>
-                <p class="description">I'm a UX/UI Designer and Web Developer passionate about creating modern,
-                    intuitive, and visually engaging digital experiences. I combine design thinking with development
-                    skills to transform ideas into functional and meaningful websites and applications.</p>
+                <div class="availability">
+                    <span class="dot"></span> Available for freelance & creative projects
+                </div>
+                <h1 class="main-title">I DESIGN.<br>I DEVELOP.<br><span class="gradient-text">I CREATE DIGITAL EXPERIENCES.</span></h1>
+                <p class="greeting">UX/UI Designer · Web Developer · University Student</p>
+                <p class="description">I'm a UX/UI Designer and Web Developer passionate about creating modern, intuitive, and meaningful digital experiences. I combine user-centered design with modern web technologies to transform ideas into functional digital products.</p>
                 <div class="hero-actions">
-                    <a href="#" class="btn btn-outline">Download CV <span class="arrow">→</span></a>
-                    <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Facebook</a>
-                    </div>
+                    <a href="#works" class="btn btn-primary">View My Work →</a>
+                    <a href="#contact" class="btn btn-outline">Let's Talk →</a>
                 </div>
             </div>
-            <!-- The right side of the hero is transparent so the scroll animation acts as the portrait/visual -->
         </section>
         <section id="about" class="about">
-            <h2 class="section-title"><span class="gradient-text">About</span> Me</h2>
-            <h3>Designer by mindset. Developer by skill. Student by journey.</h3>
-            <p>
-                I'm Vilshan Rangana, a UX/UI Designer and Web Developer currently pursuing my studies at the University
-                of Vavuniya.
-                <br><br>
-                I enjoy exploring the intersection between design and technology — creating interfaces that not only
-                look good but are also simple, accessible, and enjoyable to use.
-                <br><br>
-                My journey started with an interest in visual design and gradually grew into a passion for web
-                development and user experience. Today, I work across the design and development process, from
-                understanding a problem and creating wireframes to designing interfaces and bringing them to life
-                with code.
-                <br><br>
-                I'm continuously learning, experimenting with new technologies, and building projects that challenge me
-                to become a better designer and developer.
-            </p>
-
-        </section>
-        <section class="stats-row">
-            <div class="stat-item">
-                <h2>2+</h2>
-                <p>Years Learning <br> & Creating</p>
-            </div>
-            <div class="stat-item">
-                <h2>10+</h2>
-                <p>Project<br>Completed</p>
-            </div>
-            <div class="stat-item">
-                <h2>∞</h2>
-                <p>Ideas to Explore</p>
-            </div>
-            <div class="stat-item">
-                <h2>5+</h2>
-                <p>Languages & <br> Design Tools</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>I'm Vilshan Rangana, a UX/UI Designer and Web Developer currently pursuing my studies at the University of Vavuniya.</p>
+                    <p>I enjoy exploring the intersection between design and technology — creating interfaces that not only look good but are also simple, accessible, and enjoyable to use.</p>
+                    <p>My journey started with an interest in visual design and gradually grew into a passion for web development and user experience. Today, I work across the design and development process, from understanding a problem and creating wireframes to designing interfaces and bringing them to life with code.</p>
+                    <p>I'm continuously learning, experimenting with new technologies, and building projects that challenge me to become a better designer and developer.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>2+</h3>
+                        <p>Years Learning & Creating</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>10+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="services" class="services">
-            <h2 class="section-title"><span class="gradient-text">My Quality</span> Services</h2>
-            <p class="section-subtitle">We put your ideas and thus your wishes in the form of a unique web project that
-                inspires you and your customers.</p>
-
-            <div class="service-list">
-                <div class="service-item active">
-                    <div class="service-header">
-                        <span class="num">01</span>
-                        <h3>UI/UX Design</h3>
-                    </div>
-                    <p>I design clean, intuitive, and user-centered interfaces that make digital products easier and
-                        more enjoyable to use.</p>
-                    <p><b>Wireframing • Prototyping • User Flows • UI Design • Design Systems</b></p>
-                    <span class="icon-arrow">↘</span>
+            <div class="section-header">
+                <h2 class="section-title">My Services</h2>
+                <p class="section-subtitle">What I can do for you</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
+                    <h3>UI/UX Design</h3>
+                    <p>I design clean, intuitive, and user-centered interfaces that make digital products easier and more enjoyable to use.</p>
+                    <ul class="service-features">
+                        <li>Wireframing</li>
+                        <li>Prototyping</li>
+                        <li>Design Systems</li>
+                    </ul>
                 </div>
-                <div class="service-item">
-                    <div class="service-header">
-                        <span class="num">02</span>
-                        <h3>Web Design</h3>
-                    </div>
-                    <p>I create modern, responsive website designs that combine strong visual hierarchy with a smooth
-                        user experience.</p>
-                    <p><b>Landing Pages • Portfolio Websites • Business Websites • Responsive Design</b></p>
-                    <span class="icon-arrow">↘</span>
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
+                    <h3>Web Design</h3>
+                    <p>I create modern, responsive website designs that combine strong visual hierarchy with a smooth user experience.</p>
+                    <ul class="service-features">
+                        <li>Landing Pages</li>
+                        <li>Portfolio Websites</li>
+                        <li>Responsive Design</li>
+                    </ul>
                 </div>
-                <div class="service-item">
-                    <div class="service-header">
-                        <span class="num">03</span>
-                        <h3>Web Development</h3>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
+                    <h3>Web Development</h3>
                     <p>I transform designs into responsive and functional websites using modern web technologies.</p>
-                    <p><b>HTML • CSS • JavaScript • Responsive Design • Web Development</b></p>
-                    <span class="icon-arrow">↘</span>
+                    <ul class="service-features">
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>Web Performance</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="works" class="works">
-            <h2 class="section-title"><span class="gradient-text">My Recent</span> Works</h2>
-            <div class="works-grid">
-                <div class="work-card">
-                    <div class="placeholder-img purple-hue"></div>
+            <div class="section-header">
+                <h2 class="section-title">Selected Works</h2>
+                <p class="section-subtitle">A showcase of my recent design and development projects.</p>
+            </div>
+            <div class="works-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img purple-hue"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform Redesign</h3>
+                        <p>A complete UX/UI overhaul of an online store, focusing on improving the checkout flow and mobile experience.</p>
+                        <div class="project-tags">
+                            <span>UX Design</span>
+                            <span>Figma</span>
+                            <span>Prototyping</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Case Study →</a>
+                    </div>
                 </div>
-                <div class="work-card">
-                    <div class="placeholder-img dark-hue"></div>
-                </div>
-                <div class="work-card">
-                    <div class="placeholder-img dark-hue"></div>
-                </div>
-                <div class="work-card">
-                    <div class="placeholder-img purple-hue"></div>
+                <!-- Project 2 -->
+                <div class="project-card reversed">
+                    <div class="project-image">
+                        <div class="placeholder-img dark-hue"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portfolio Website Template</h3>
+                        <p>A responsive, customizable portfolio template built for creatives to showcase their work efficiently.</p>
+                        <div class="project-tags">
+                            <span>Web Development</span>
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Live Preview →</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="resume" class="resume">
-            <div class="resume-col">
-                <h2 class="col-title"><span class="gradient-text">🎓 My Education</span></h2>
+        <section id="process" class="process">
+            <div class="section-header">
+                <h2 class="section-title">Design Process</h2>
+                <p class="section-subtitle">How I bring ideas to life.</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Research & Discovery</h3>
+                    <p>Understanding the problem, target audience, and business goals through research.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Wireframing</h3>
+                    <p>Creating structural layouts to define content placement and user flow.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>UI Design</h3>
+                    <p>Applying visual aesthetics, typography, and branding to the wireframes.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Development</h3>
+                    <p>Translating designs into clean, responsive, and functional code.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="timeline">
                 <div class="timeline-item">
                     <span class="date">2022 - Present</span>
                     <h3>BSc (Hons) in Information Technology</h3>
@@ -154,47 +199,66 @@
                 </div>
                 <div class="timeline-item">
                     <span class="date">2019 - 2020</span>
-                    <h3>DIPLOMA IN GRAPHIC DESIGN</h3>
+                    <h3>Diploma in Graphic Design</h3>
                     <p>Rotary Higher Education Centre, Nugegoda</p>
                 </div>
             </div>
         </section>
 
-    <section id="skills" class="skills">
-        <h2 class="section-title"><span class="gradient-text">My</span> Skills</h2>
-        <p class="section-subtitle">We put your ideas and thus your wishes in the form of a unique web project that
-            inspires you and your customers.</p>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>Figma</p>
+        <section id="learning" class="learning">
+            <div class="section-header">
+                <h2 class="section-title">What I'm Learning</h2>
+                <p class="section-subtitle">I believe in continuous growth. Here is what I am currently focusing on.</p>
             </div>
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>Canva</p>
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <h3>Advanced React</h3>
+                    <p>Deepening my understanding of React hooks, state management, and performance optimization to build scalable web applications.</p>
+                </div>
+                <div class="learning-card">
+                    <h3>Figma Prototyping</h3>
+                    <p>Exploring advanced prototyping techniques, variables, and auto-layout to create more dynamic and realistic design prototypes.</p>
+                </div>
             </div>
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>Photoshop</p>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Tools</h2>
+                <p class="section-subtitle">Technologies and tools I use to create digital products.</p>
             </div>
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>HTML</p>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Design</h3>
+                    <div class="skill-tags">
+                        <span>Figma</span>
+                        <span>Canva</span>
+                        <span>Adobe Photoshop</span>
+                        <span>Adobe Illustrator</span>
+                        <span>UI/UX Design</span>
+                        <span>Wireframing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>React JS</span>
+                        <span>Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Other</h3>
+                    <div class="skill-tags">
+                        <span>Problem Solving</span>
+                        <span>Teamwork</span>
+                        <span>Communication</span>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>CSS</p>
-            </div>
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>React</p>
-            </div>
-            <div class="skill-card">
-                <div class="percent"></div>
-                <p>JavaScript</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <section id="contact" class="contact">
         <div class="contact-container">
