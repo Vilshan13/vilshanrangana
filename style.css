@@ -256,6 +256,22 @@ section {
     transform: translateY(-5px);
 }
 
+/* About Section */
+.about {
+    padding: 80px 0;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.about p {
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
 .service-header {
     display: flex;
     align-items: center;
@@ -346,7 +362,9 @@ section {
 /* Resume */
 .resume {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
     gap: 50px;
 }
 
@@ -402,6 +420,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 120px;
     transition: all 0.3s;
 }
 
