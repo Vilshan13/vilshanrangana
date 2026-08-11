@@ -54,7 +54,7 @@
                     intuitive, and meaningful digital experiences. I combine user-centered design with modern web
                     technologies to transform ideas into functional digital products.</p>
                 <div class="hero-actions">
-                    <a href="#works" class="btn btn-primary">View My Work →</a>
+                    <a href="#" class="btn btn-primary">Download CV →</a>
                     <a href="#contact" class="btn btn-outline">Let's Talk →</a>
                 </div>
             </div>
@@ -306,26 +306,28 @@
                     </div>
 
                     <div class="contact-form">
-                        <form>
+                        <form action="https://formsubmit.co/vilshanrangana18@gmail.com" method="POST">
+                            <!-- Disable Captcha for smoother UX -->
+                            <input type="hidden" name="_captcha" value="false">
                             <div class="input-row">
                                 <div class="input-group">
                                     <label for="fname">First Name</label>
-                                    <input type="text" id="fname" placeholder="John">
+                                    <input type="text" id="fname" name="First Name" placeholder="John" required>
                                 </div>
                                 <div class="input-group">
                                     <label for="lname">Last Name</label>
-                                    <input type="text" id="lname" placeholder="Doe">
+                                    <input type="text" id="lname" name="Last Name" placeholder="Doe" required>
                                 </div>
                             </div>
                             <div class="input-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" placeholder="john@example.com">
+                                <input type="email" id="email" name="Email" placeholder="john@example.com" required>
                             </div>
                             <div class="input-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                                <textarea id="message" name="Message" rows="5" placeholder="Tell me about your project..." required></textarea>
                             </div>
-                            <button type="button" class="btn btn-primary submit-btn">Send Message →</button>
+                            <button type="submit" class="btn btn-primary submit-btn">Send Message →</button>
                         </form>
                     </div>
                 </div>
